@@ -180,6 +180,8 @@ $(document).keypress(function(e){
 	if(spacepressed==true){
 		if(e.which ==113){
 			output()
+		}else if(e.which ==97){
+			$('.textstyle').val("")
 		}
 		if(e.which ==101){
 			$('#volume').val(($('#volume').val()/1+1).toFixed(0))
