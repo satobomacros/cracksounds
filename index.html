@@ -101,19 +101,19 @@ sounds beta0.8
 				<div class="form-group">
 					<label for="volume">VOL</label>
 					<input type="number" class="form-control" id="volume" placeholder="volume*10">
+					<input type="number" id="volplus" placeholder="volume plussing">
 				</div>
 				<div class="form-group">
 					<label for="pitch">Pitch</label>
 					<input type="number" class="form-control" id="pitch" placeholder="Pitch*10">
+					<input type="number" id="pitchplus" placeholder="pitch plussing">
 				</div>
 				<div class="form-group">
 					<label for="delay">delay setting</label>
 				<div></div>
 					<input type="number" class="form-control" id="delay" placeholder="delay in tick">
 				</div>
-				<div class="form-group">
 					<input type="number" id="delayplus" placeholder="delay plussing">
-				</div>
 				  <button type="button" class="btn btn-Primary buttons123">output_button</button>
 				  
 				  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">How_To_Use</button>
@@ -172,6 +172,9 @@ function output(xpot){
 	
 	$('.textstyle').val(beforetext+',')
 	$('#delay').val(($('#delay').val()/1+$('#delayplus').val()/1).toFixed(0))
+	$('#pitch').val(($('#pitch').val()/1+$('#pitchplus').val()/1).toFixed(1))
+	$('#volume').val(($('#volume').val()/1+$('#volplus').val()/1).toFixed(0))
+		
 }
 $('.buttons123').click(output);
 var spacepressed = false;
