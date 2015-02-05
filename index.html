@@ -178,6 +178,7 @@ var spacepressed = false;
 
 $(document).keypress(function(e){
 	if(spacepressed==true){
+    console.log(e.which);
 		if(e.which ==113){
 			output()
 		}else if(e.which ==97){
@@ -189,9 +190,9 @@ $(document).keypress(function(e){
 			$('#volume').val(($('#volume').val()/1-1).toFixed(0))
 		}
 		if(e.which ==114){
-			$('#pitch').val(($('#pitch').val()/1+1).toFixed(0))
+			$('#pitch').val(($('#pitch').val()/1+0.1).toFixed(1))
 		}else if(e.which ==102){
-			$('#pitch').val(($('#pitch').val()/1-1).toFixed(0))
+			$('#pitch').val(($('#pitch').val()/1-0.1).toFixed(1))
 		}
 		if(e.which ==116){
 			$('#delay').val(($('#delay').val()/1+1).toFixed(0))
@@ -199,12 +200,12 @@ $(document).keypress(function(e){
 			$('#delay').val(($('#delay').val()/1-1).toFixed(0))
 		}
 	}
-  if(e.which ==119){
+  if(e.which ==119||e.which ==87){
 	spacepressed=true;
   }
 });
 $(document).keyup(function(e){
-  if(e.which ==119){
+  if(e.which ==119||e.which ==87){
 	spacepressed=false;
   }
 });
