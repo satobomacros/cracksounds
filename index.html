@@ -179,6 +179,7 @@ var spacepressed = false;
 $(document).keypress(function(e){
 	var key = String.fromCharCode(e.which).toUpperCase();
 	if(spacepressed==true){
+	document.body.style.cursor = "help";
 		if(key == 'Q'){
 			output()
 		}else if(key == "A"){
@@ -208,6 +209,7 @@ $(document).keyup(function(e){
 	var key = String.fromCharCode(e.which).toUpperCase();
   if(key == "W"){
 		spacepressed=false;
+		document.body.style.cursor = "default";
   }
 });
 
