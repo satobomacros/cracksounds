@@ -177,25 +177,26 @@ $('.buttons123').click(output);
 var spacepressed = false;
 
 $(document).keypress(function(e){
+	var key = String.fromCharCode(e.which).toUpperCase();
 	if(spacepressed==true){
-		if(e.which ==113){
+		if(key == 'Q'){
 			output()
-		}else if(e.which ==97){
+		}else if(key == "A"){
 			$('.textstyle').val("")
 		}
-		if(e.which ==101){
+		if(key == "E"){
 			$('#volume').val(($('#volume').val()/1+1).toFixed(0))
-		}else if(e.which ==100){
+		}else if(key == "D"){
 			$('#volume').val(($('#volume').val()/1-1).toFixed(0))
 		}
-		if(e.which ==114){
+		if(key == "R"){
 			$('#pitch').val(($('#pitch').val()/1+1).toFixed(0))
-		}else if(e.which ==102){
+		}else if(key == "F"){
 			$('#pitch').val(($('#pitch').val()/1-1).toFixed(0))
 		}
-		if(e.which ==116){
+		if(key == "T"){
 			$('#delay').val(($('#delay').val()/1+1).toFixed(0))
-		}else if(e.which ==103){
+		}else if(key == "G"){
 			$('#delay').val(($('#delay').val()/1-1).toFixed(0))
 		}
 	}
@@ -204,8 +205,9 @@ $(document).keypress(function(e){
   }
 });
 $(document).keyup(function(e){
-  if(e.which ==119){
-	spacepressed=false;
+	var key = String.fromCharCode(e.which).toUpperCase();
+  if(key == "W"){
+		spacepressed=false;
   }
 });
 
