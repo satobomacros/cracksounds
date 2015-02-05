@@ -171,7 +171,7 @@ function output(xpot){
 	 beforetext+=$('#delay').val()/1
 	
 	$('.textstyle').val(beforetext+',')
-	$('#delay').val($('#delay').val()/1+$('#delayplus').val()/1)
+	$('#delay').val(($('#delay').val()/1+$('#delayplus').val()/1).toFixed(0))
 }
 $('.buttons123').click(output);
 var spacepressed = false;
