@@ -179,7 +179,12 @@ var spacepressed = false;
 $(document).keypress(function(e){
 	var key = String.fromCharCode(e.which).toUpperCase();
 	if(spacepressed==true){
+<<<<<<< HEAD
 		if(key == 'Q'){
+=======
+    console.log(e.which);
+		if(e.which ==113){
+>>>>>>> FETCH_HEAD
 			output()
 		}else if(key == "A"){
 			$('.textstyle').val("")
@@ -189,10 +194,17 @@ $(document).keypress(function(e){
 		}else if(key == "D"){
 			$('#volume').val(($('#volume').val()/1-1).toFixed(0))
 		}
+<<<<<<< HEAD
 		if(key == "R"){
 			$('#pitch').val(($('#pitch').val()/1+1).toFixed(0))
 		}else if(key == "F"){
 			$('#pitch').val(($('#pitch').val()/1-1).toFixed(0))
+=======
+		if(e.which ==114){
+			$('#pitch').val(($('#pitch').val()/1+0.1).toFixed(1))
+		}else if(e.which ==102){
+			$('#pitch').val(($('#pitch').val()/1-0.1).toFixed(1))
+>>>>>>> FETCH_HEAD
 		}
 		if(key == "T"){
 			$('#delay').val(($('#delay').val()/1+1).toFixed(0))
@@ -200,14 +212,19 @@ $(document).keypress(function(e){
 			$('#delay').val(($('#delay').val()/1-1).toFixed(0))
 		}
 	}
-  if(e.which ==119){
+  if(e.which ==119||e.which ==87){
 	spacepressed=true;
   }
 });
 $(document).keyup(function(e){
+<<<<<<< HEAD
 	var key = String.fromCharCode(e.which).toUpperCase();
   if(key == "W"){
 		spacepressed=false;
+=======
+  if(e.which ==119||e.which ==87){
+	spacepressed=false;
+>>>>>>> FETCH_HEAD
   }
 });
 
