@@ -124,7 +124,8 @@ sounds beta0.8
 <font size="4" color="navy">choose the sound that left side.</font><br>
 <font size="4" color="navy">and set the volume(e|d),Pitch(r|f) and delay(t|g).</font><br>
 <font size="4" color="navy">press the output_button to output(q).</font><br>
-<font size="4" color="navy">if you want delete all,push the delete_button.</font><br>
+<font size="4" color="navy">if you want delete all,push the delete.</font><br>
+<font size="4" color="navy">if you want delete previous thing,push delete_last.</font><br>
 <font size="4" color="navy">you must press (w) key if you want short cut*sample if press (w+q),it output</font><br>
 *you can setting the sounds source.<br>
 *delay_plussing is always delay+delayplussing when press output_button.<br>
@@ -134,7 +135,8 @@ sounds beta0.8
 <font size="4" color="navy">まず左にある音を選んでください.</font><br>
 <font size="4" color="navy">そしてvolume(e|d)とPitch(r|f)とDelay(t|g)を設定してください.</font><br>
 <font size="4" color="navy">output_buttonを押してoutput(q)してください.</font><br>
-<font size="4" color="navy">もし全て消したかったら,delete_buttonを押してください.</font><br>
+<font size="4" color="navy">もし全て消したかったら,deleteを押してください.</font><br>
+<font size="4" color="navy">もし１個前だけ消し方ったら,delete_lastを押してください.</font><br>
 <font size="4" color="navy">ショートカットキーを(w)と一緒に使うことができます*たとえば(w+q)を押すとoutputします</font><br>
 *あなたもsounds sourceを設定できます,<br>
 *delay_plussingはoutput_buttonを押して行く毎にdelay+delayplussingをしていきます.<br>
@@ -222,6 +224,16 @@ $('.buttons456').click(function(xpot){
 	
 	
 	$('.textstyle').val("")
+	
+});
+$('.buttons789').click(function(xpot){
+	xpot.preventDefault();
+	
+	
+	var textchange = $('.textstyle').val()
+	var textchangea = textchange.length-1;
+    var textchangefinal = textchange.substring(0,textchangea).lastIndexOf(",");
+	$('.textstyle').val(textchange.substring(0,textchangefinal+1))
 	
 });
 </script>
