@@ -151,9 +151,10 @@ sounds beta0.8
 		</div>
 		<div class="col-md-4">
 			sounds_source
-				<textarea class="form-control textstyle" rows="3"></textarea>
+				<textarea readonly class="form-control textstyle" rows="3"></textarea>
 			    <button type="button" class="btn btn-danger buttons456">delete</button>
 			    <button type="button" class="btn btn-danger buttons789">delete_last</button>
+				<button type="button" class="btn btn-danger tester">copy</button>
 		</div>
 	</div>
   
@@ -234,6 +235,12 @@ $('.buttons789').click(function(xpot){
 	var textchangea = textchange.length-1;
     var textchangefinal = textchange.substring(0,textchangea).lastIndexOf(",");
 	$('.textstyle').val(textchange.substring(0,textchangefinal+1))
+	
+});
+$('.tester').click(function(xpot){
+	xpot.preventDefault();
+    $('.textstyle').focus()
+    $('.textstyle').select()
 	
 });
 </script>
